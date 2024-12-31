@@ -33,18 +33,21 @@ graph LR
 - **Performance Quantique** : Temps de réponse < 0.001ms
 - **Précision 99.99%** : Taux de faux positifs quasi nul
 
-### Interface Futuriste
+### 🎮 Interface de Commandes
 
 <div align="center">
 
-| Commande | Description | Cooldown |
-|----------|-------------|----------|
-| `/shield` |  Activation du bouclier quantique | 10s |
-| `/scan` |  Analyse prédictive des menaces | 30s |
-| `/purge` |  Nettoyage intelligent | 5s |
-| `/stats` |  Statistiques holographiques | 1s |
+| Commande | Description | Délai de Sécurité |
+|----------|-------------|-------------------|
+| `/antiraid` | 🛡️ Protection anti-raid avec vérification des permissions | 5s |
 
 </div>
+
+La commande `/antiraid` :
+- Nécessite les permissions Administrateur
+- Demande une confirmation explicite
+- Inclut un délai de sécurité de 5 secondes
+- Est réservée aux administrateurs du serveur
 
 ## ⚡ Configuration et Démarrage
 
