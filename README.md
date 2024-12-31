@@ -15,10 +15,6 @@
 
 > *"La protection de serveur Discord nouvelle génération, propulsée par l'intelligence artificielle "*
 
-<div align="center">
-  <img src="https://your-banner-image-url.png" alt="Anti-Droitard Banner" width="800px">
-</div>
-
 ---
 
 ## Caractéristiques Révolutionnaires
