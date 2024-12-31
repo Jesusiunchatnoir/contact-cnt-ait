@@ -47,71 +47,29 @@ graph LR
 
 </div>
 
-## Installation du Futur
+## ⚡ Configuration et Démarrage
 
-```bash
-# Clonage dimensionnel
-git clone https://github.com/AnARCHIS12/antidroitard-.git
-
-# Téléportation dans le répertoire
-cd antidroitard-
-
-# Installation des modules quantiques
-npm install --quantum
-
-# Démarrage du réacteur
-npm run future
-```
-
-## Technologies de Pointe
-
-<div align="center">
-  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Discord.js-7289DA?style=for-the-badge&logo=discord&logoColor=white"/>
-  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
-</div>
-
-## Performances Surhumaines
-
-```
-Temps de réponse moyen : 0.0003s
-Précision de détection : 99.99%
-Uptime : 99.999%
-Taux de satisfaction : ∞%
-```
-
-## Interface de Commande Holographique
-
-```js
-╔════════════════════════════════════╗
-║    ANTI-DROITARD CONTROL PANEL    ║
-╠════════════════════════════════════╣
-║ [1] SHIELD ACTIVATION   ▶️ ONLINE  ║
-║ [2] THREAT SCANNER     🟢 ACTIVE  ║
-║ [3] QUANTUM FIREWALL   ✨ ENABLED ║
-║ [4] AI PREDICTION      🧠 RUNNING ║
-╚════════════════════════════════════╝
-```
-
-## Quick Start
-
-1. **Injection du Token Quantique**
+1. **Configuration du Token Discord**
 ```env
-QUANTUM_TOKEN=votre_token_interdimensionnel
+TOKEN=votre_token_discord
 ```
 
-2. **Activation du Bouclier**
+2. **Installation des dépendances**
 ```bash
-npm run shield:activate
+npm install discord.js dotenv
 ```
 
-3. **Déploiement des Sondes**
+3. **Démarrage du Bot**
 ```bash
-npm run probes:deploy
+node index.js
 ```
 
-## Support Galactique
+Une fois le bot démarré, vous verrez :
+- Le statut de connexion
+- Le lien d'invitation pour ajouter le bot à votre serveur
+- La confirmation que les commandes slash sont enregistrées
+
+## 🌟 Support Galactique
 
 <div align="center">
 
