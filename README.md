@@ -34,7 +34,7 @@ graph LR
 ```
 
 - **IA Prédictive** : Détection des menaces avant qu'elles ne se produisent
-- **Cryptographie Militaire** : Protection des données de niveau bancaire
+- **Cryptographie Militaire** : Protection des données de niveau militaire
 - **Performance Quantique** : Temps de réponse < 0.001ms
 - **Précision 99.99%** : Taux de faux positifs quasi nul
 
@@ -97,14 +97,6 @@ Taux de satisfaction : ∞%
 ║ [4] AI PREDICTION      🧠 RUNNING ║
 ╚════════════════════════════════════╝
 ```
-
-## Roadmap 2024
-
-- [ ] Intelligence artificielle auto-évolutive
-- [ ] Protection interdimensionnelle
-- [ ] Détection des émotions toxiques
-- [ ] Interface holographique en réalité augmentée
-- [ ] Prédiction des raids avant leur conception
 
 ## Quick Start
 
