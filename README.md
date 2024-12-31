@@ -8,7 +8,6 @@
 /_/   \_\_| |_|\__|_|  |_|   |_|   |_| \_\____/ \___/  |_| |_| \_\|____|_| \_\____/ 
 ```
 
-[![Discord](https://img.shields.io/discord/YOUR_SERVER_ID?color=7289da&logo=discord&logoColor=white)](https://discord.gg/your-invite-link)
 [![Version](https://img.shields.io/github/v/release/AnARCHIS12/antidroitard-?include_prereleases&style=flat&color=00ff00)](https://github.com/AnARCHIS12/antidroitard-/releases)
 [![Stars](https://img.shields.io/github/stars/AnARCHIS12/antidroitard-?style=flat&color=ffff00)](https://github.com/AnARCHIS12/antidroitard-/stargazers)
 [![License](https://img.shields.io/github/license/AnARCHIS12/antidroitard-?style=flat&color=ff69b4)](LICENSE)
@@ -69,12 +68,13 @@ Une fois le bot démarré, vous verrez :
 - Le lien d'invitation pour ajouter le bot à votre serveur
 - La confirmation que les commandes slash sont enregistrées
 
-## 🌟 Support Galactique
+## 🌟 Support
 
 <div align="center">
 
-[![Discord](https://img.shields.io/discord/YOUR_SERVER_ID?color=7289da&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/your-invite-link)
-[![Twitter](https://img.shields.io/twitter/follow/your_twitter?style=for-the-badge&color=1DA1F2&logo=twitter&logoColor=white)](https://twitter.com/your_twitter)
+**[Documentation](docs.md)** • **[Contribution](CONTRIBUTING.md)** • **[Support](SUPPORT.md)**
+
+*Propulsé par l'énergie des trous noirs et le café ☕*
 
 </div>
 
