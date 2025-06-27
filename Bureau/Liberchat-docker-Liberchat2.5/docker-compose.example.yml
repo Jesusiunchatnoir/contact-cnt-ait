@@ -1,0 +1,44 @@
+version: '3.8'
+
+# Structure monolithique :
+# Le backend Node.js sert automatiquement le frontend Vite/React compilé (dossier dist/)
+# Un seul service, tout est accessible sur le port 3000
+services:
+  liberchat-app:
+    image: liberchat/liberchat:6.1.16
+    container_name: liberchat-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000" # Frontend ET backend accessibles sur ce port
+    environment:
+      - ALLOWED_DOMAINS=https://votre-domaine.com, http://192.168.x.x:3000
+      - BRANCH=Liberchat6.1.16
+      # - NODE_ENV=production # Décommentez pour forcer le mode production
+    # volumes:
+    #   - ./data:/app/data # Exemple : persistance des fichiers (logs, uploads, etc.)
+    #   - ./src:/app       # Décommentez pour le développement local (hot reload)
+    # networks:
+    #   - liberchat-net
+
+# Variante avancée (séparation front/back) :
+# Voir documentation pour servir le frontend via Nginx ou autre serveur statique
+#
+# services:
+#   frontend:
+#     image: nginx:alpine
+#     volumes:
+#       - ./dist:/usr/share/nginx/html:ro
+#     ports:
+#       - "8080:80"
+#   backend:
+#     image: liberchat/liberchat:6.1.16
+#     environment:
+#       - NODE_ENV=production
+#     ports:
+#       - "3000:3000"
+#     depends_on:
+#       - frontend
+#
+# networks:
+#   liberchat-net:
+#     driver: bridge

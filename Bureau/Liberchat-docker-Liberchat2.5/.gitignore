@@ -1,0 +1,9 @@
+# Fichiers à ignorer pour un dépôt docker Liberchat autonome
+node_modules/
+dist/
+*.log
+.DS_Store
+.env
+.env.*
+# Cache Docker éventuel
+.docker/

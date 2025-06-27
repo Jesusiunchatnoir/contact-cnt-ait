@@ -1,0 +1,71 @@
+README rapide — problème HTTPS avec LiberChat et Nginx
+Situation
+Tu veux faire tourner LiberChat derrière Nginx en HTTPS sur ta machine.
+Tu exposes le port 443, tu crées un certificat auto-signé, mais ça coince :
+Nginx n’écoute pas sur le port 443 et tu te tapes des erreurs SSL (ERR_SSL_PROTOCOL_ERROR).
+
+Ce qui bloque
+Ta config Nginx est absente ou mal montée dans le container.
+
+Tes certificats sont introuvables ou ont les mauvais droits.
+
+Nginx ne démarre pas avec l’écoute sur le 443 parce que la conf n’est pas prise en compte.
+
+Ce que tu dois faire
+Crée un dossier pour les certificats et génère-les, avec les bons droits :
+
+bash
+Copier
+Modifier
+mkdir -p ./nginx/certs
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+  -keyout ./nginx/certs/key.pem -out ./nginx/certs/cert.pem -subj "/CN=192.168.0.75"
+chmod 600 ./nginx/certs/key.pem
+Mets ta config Nginx dans ./nginx/conf.d/default.conf (vérifie qu’elle existe) :
+
+nginx
+Copier
+Modifier
+server {
+    listen 443 ssl;
+    ssl_certificate /etc/nginx/certs/cert.pem;
+    ssl_certificate_key /etc/nginx/certs/key.pem;
+
+    location / {
+        proxy_pass http://liberchat:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+Dans ton docker-compose.yml, monte bien les volumes et expose les ports :
+
+yaml
+Copier
+Modifier
+volumes:
+  - ./nginx/conf.d:/etc/nginx/conf.d:ro
+  - ./nginx/certs:/etc/nginx/certs:ro
+ports:
+  - "443:443"
+  - "80:80"
+Redémarre le tout et vérifie que Nginx écoute bien sur le port 443 :
+
+bash
+Copier
+Modifier
+docker-compose down
+docker-compose up -d --build
+docker exec -it liberchat-nginx netstat -tlnp | grep 443
+Teste la connexion :
+
+bash
+Copier
+Modifier
+curl -k https://192.168.0.75
+Résultat attendu
+Tu dois voir ta page LiberChat sans erreur SSL.
+Si tu as encore des erreurs, c’est souvent un souci de certificat ou de montage du dossier conf/certs.
+
+Voilà, tu prends le contrôle et tu règles ça direct. Pas de pitié pour les erreurs système.
+Ni Dieu, ni maître, juste la technique pour casser le système.
+

@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  liberchat:
+    build:
+      context: ..
+      dockerfile: docker/liberchat/Dockerfile
+      args:
+        - BRANCH=${BRANCH:-Liberchat6.1.16}
+    container_name: liberchat-autonome
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - ALLOWED_DOMAINS=${ALLOWED_DOMAINS}
+      - PORT=3000
+    restart: unless-stopped
+  nginx:
+    build:
+      context: ./nginx
+    container_name: liberchat-nginx
+    depends_on:
+      - liberchat
+    ports:
+      - "443:443"
+      - "80:80"
+    restart: unless-stopped
