@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  communecast:
+    build: .
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=${PORT:-3000}
+      - DOMAIN=${DOMAIN:-localhost}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - communecast-network
+
+  # Optional: Nginx reverse proxy
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - communecast
+    restart: unless-stopped
+    networks:
+      - communecast-network
+    profiles:
+      - with-proxy
+
+networks:
+  communecast-network:
+    driver: bridge
+
+# Example usage:
+# 1. Basic deployment:
+#    docker-compose up -d
+#
+# 2. With Nginx proxy:
+#    docker-compose --profile with-proxy up -d
+#
+# 3. With custom domain and port:
+#    DOMAIN=your-domain.com PORT=3000 docker-compose up -d

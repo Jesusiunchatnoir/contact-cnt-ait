@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --commune-red: #E10600; /* Rouge vif CNT-AIT */
+  --commune-black: #000000;
+  --commune-white: #FFFFFF;
+  --commune-gray-dark: #181818;
+  --commune-gray: #232323;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 100% 44%; /* Rouge vif */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 0%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 80%;
+    --accent: 0 100% 44%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 44%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 100% 44%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.commune-gradient {
+  background: linear-gradient(135deg, #000 0%, #E10600 50%, #000 100%);
+}
+
+.commune-gradient-dark {
+  background: linear-gradient(135deg, #000 0%, #E10600 50%, #000 100%);
+}
+
+.commune-red {
+  color: var(--commune-red);
+}
+
+.commune-white {
+  color: var(--commune-white);
+}
+
+.commune-black {
+  color: var(--commune-black);
+}
+
+.video-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.video-grid.single {
+  grid-template-columns: 1fr;
+}
+
+.video-grid.dual {
+  grid-template-columns: 1fr 1fr;
+}
+
+.video-grid.multiple {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .video-grid.dual,
+  .video-grid.multiple {
+    grid-template-columns: 1fr;
+  }
+}
+
+.encrypted-indicator {
+  animation: pulse-security 2s infinite;
+}
+
+@keyframes pulse-security {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(225, 6, 0, 0.7);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+    box-shadow: 0 0 0 4px rgba(225, 6, 0, 0.3);
+  }
+}
+
+.anarchist-glow {
+  box-shadow: 0 0 24px 4px #E10600, 0 0 0 2px #fff;
+}
+
+.anarchist-border {
+  border: 2px solid var(--commune-red);
+  background: linear-gradient(45deg, rgba(225,6,0,0.12) 0%, rgba(0,0,0,0.92) 100%);
+}
+
+.anarcho-flag {
+  background: linear-gradient(135deg, #E10600 50%, #000 50%);
+}
+
+.revolutionary-text {
+  background: linear-gradient(45deg, #DC2626, #EF4444, #DC2626);
+  background-size: 200% 200%;
+  animation: revolutionary-shine 3s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes revolutionary-shine {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.commune-button {
+  background: linear-gradient(135deg, #DC2626, #991B1B);
+  border: 1px solid #DC2626;
+  transition: all 0.3s ease;
+}
+
+.commune-button:hover {
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+  box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
+  transform: translateY(-1px);
+}
+
+.commune-card {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(31, 31, 31, 0.8));
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.commune-input {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  transition: all 0.3s ease;
+}
+
+.commune-input:focus {
+  border-color: #DC2626;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+}

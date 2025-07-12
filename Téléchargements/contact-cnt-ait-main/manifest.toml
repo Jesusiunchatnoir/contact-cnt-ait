@@ -1,0 +1,68 @@
+packaging_format = 2
+
+id = "contacts-libres-cnt"
+name = "Contacts Libres CNT-AIT"
+description.en = "Decentralized contact manager for anarcho-syndicalist militants and affinity groups"
+description.fr = "Gestionnaire de contacts décentralisé pour militants anarcho-syndicalistes et groupes affinitaires"
+
+version = "1.0~ynh1"
+
+maintainers = ["CNT-AIT Community"]
+
+[upstream]
+license = "MIT"
+website = "https://github.com/Jesusiunchatnoir/contact-cnt-ait"
+demo = "https://github.com/Jesusiunchatnoir/contact-cnt-ait"
+admindoc = "https://github.com/Jesusiunchatnoir/contact-cnt-ait"
+userdoc = "https://github.com/Jesusiunchatnoir/contact-cnt-ait/blob/main/README.md"
+code = "https://github.com/Jesusiunchatnoir/contact-cnt-ait"
+
+[integration]
+yunohost = ">= 11.2"
+architectures = "all"
+multi_instance = true
+ldap = false
+sso = false
+disk = "50M"
+ram.build = "200M"
+ram.runtime = "100M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/contacts"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+    [install.admin]
+    type = "user"
+
+    [install.password]
+    type = "password"
+    help.en = "Admin password for the application"
+    help.fr = "Mot de passe administrateur pour l'application"
+
+[resources]
+    [resources.sources]
+        [resources.sources.main]
+        url = "https://github.com/Jesusiunchatnoir/contact-cnt-ait_ynh/archive/refs/heads/main.tar.gz"
+        sha256 = "a7d3e120404fce3a9e8369524008decb6f6d815a99a8c99a1144baa611703aff"
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.data_dir]
+
+    [resources.permissions]
+        main.url = "/"
+
+    [resources.ports]
+
+    [resources.apt]
+    packages = "nodejs, npm, sqlite3, build-essential"
