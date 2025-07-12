@@ -11,11 +11,11 @@ maintainers = ["CNT-AIT Community"]
 
 [upstream]
 license = "MIT"
-website = "https://github.com/Jesusiunchatnoir/contact-cnt-ait_ynh"
-demo = "https://github.com/Jesusiunchatnoir/contact-cnt-ait_ynh"
-admindoc = "https://github.com/Jesusiunchatnoir/contact-cnt-ait_ynh"
-userdoc = "https://github.com/Jesusiunchatnoir/contact-cnt-ait_ynh/blob/main/README.md"
-code = "https://github.com/Jesusiunchatnoir/contact-cnt-ait_ynh"
+website = "https://github.com/Jesusiunchatnoir/contact-cnt-ait"
+demo = "https://github.com/Jesusiunchatnoir/contact-cnt-ait"
+admindoc = "https://github.com/Jesusiunchatnoir/contact-cnt-ait"
+userdoc = "https://github.com/Jesusiunchatnoir/contact-cnt-ait/blob/main/README.md"
+code = "https://github.com/Jesusiunchatnoir/contact-cnt-ait"
 
 [integration]
 yunohost = ">= 11.2"
@@ -51,7 +51,7 @@ ram.runtime = "100M"
     [resources.sources]
         [resources.sources.main]
         url = "https://github.com/Jesusiunchatnoir/contact-cnt-ait_ynh/archive/refs/heads/main.tar.gz"
-        sha256 = "1f37a069bf8e4a9d90c1a8abfa93a73d7e71eba3c047dfda5a656d4065bbedf6"
+        sha256 = "a7d3e120404fce3a9e8369524008decb6f6d815a99a8c99a1144baa611703aff"
 
     [resources.system_user]
 
