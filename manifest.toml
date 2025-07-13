@@ -51,6 +51,8 @@ ram.runtime = "100M"
     [resources.sources]
         [resources.sources.main]
         url = "https://github.com/Jesusiunchatnoir/contact-cnt-ait_ynh/archive/refs/heads/main.tar.gz"
+        autoupdate.strategy = "latest_github_tag"
+        autoupdate.upstream = "https://github.com/Jesusiunchatnoir/contact-cnt-ait_ynh"
 
     [resources.system_user]
 
