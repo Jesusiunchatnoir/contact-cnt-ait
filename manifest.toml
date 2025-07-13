@@ -48,13 +48,6 @@ ram.runtime = "100M"
     help.fr = "Mot de passe administrateur pour l'application"
 
 [resources]
-    [resources.sources]
-        [resources.sources.main]
-        url = "https://github.com/Jesusiunchatnoir/contact-cnt-ait_ynh/archive/refs/heads/main.tar.gz"
-        sha256 = "REMPLACEZ_PAR_LE_SHA256_CALCULE"
-        autoupdate.strategy = "latest_github_tag"
-        autoupdate.upstream = "https://github.com/Jesusiunchatnoir/contact-cnt-ait_ynh"
-
     [resources.system_user]
 
     [resources.install_dir]
